@@ -20,4 +20,7 @@ public class MenuBtn : MonoBehaviour
         SceneManager.LoadScene(1);
 
     }
+    public void ResetScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

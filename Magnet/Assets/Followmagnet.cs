@@ -23,7 +23,7 @@ public class Followmagnet : MonoBehaviour
 
         if (slider.value > threshold)
         {
-            f_MoveSpeed = slider.value * 10;
+            f_MoveSpeed = slider.value * 15;
             f_RotSpeed = slider.value * 3;
         }
         else
@@ -32,9 +32,12 @@ public class Followmagnet : MonoBehaviour
             f_RotSpeed = 0;
         }
         /* Look at Player*/
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(tr_Player.position - transform.position), f_RotSpeed * Time.deltaTime);
-        /* Move at Player*/
-        transform.position += transform.forward * f_MoveSpeed * Time.deltaTime;
+        if (Vector3.Distance(this.transform.position, tr_Player.position) < 10*slider.value) {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(tr_Player.position - transform.position), f_RotSpeed * Time.deltaTime);
+            /* Move at Player*/
+            transform.position += transform.forward * f_MoveSpeed * Time.deltaTime;
+        }
+        
     }
     public void setThres(float thres) {
         threshold = thres;

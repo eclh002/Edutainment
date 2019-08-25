@@ -25,7 +25,7 @@ public class magnetscript : MonoBehaviour
     }
     public void line2() {
         Debug.Log("line2");
-        Destroy(obj);
+        //Destroy(obj);
         obj = Instantiate(nail, start.transform);
         obj.GetComponent<Followmagnet>().setThres(0.8f);
     }
