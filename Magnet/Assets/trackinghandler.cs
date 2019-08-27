@@ -10,6 +10,8 @@ public class trackinghandler : MonoBehaviour, ITrackableEventHandler
     protected TrackableBehaviour.Status m_NewStatus;
     [SerializeField]
     GameObject info;
+    [SerializeField]
+    
 
     protected virtual void Start()
     {
@@ -69,6 +71,13 @@ public class trackinghandler : MonoBehaviour, ITrackableEventHandler
         // Enable canvas':
         foreach (var component in canvasComponents)
             component.enabled = true;
+        var rigidBody = GetComponentsInChildren<Rigidbody>(true);
+
+        foreach (var component in rigidBody)
+        {
+            
+                component.useGravity = true;
+        }
     }
     protected virtual void OnTrackingLost()
     {
@@ -88,5 +97,12 @@ public class trackinghandler : MonoBehaviour, ITrackableEventHandler
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
+        var rigidBody = GetComponentsInChildren<Rigidbody>(true);
+
+        foreach (var component in rigidBody)
+        {
+           
+                component.useGravity = false;
+        }
     }
 }
