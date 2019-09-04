@@ -23,4 +23,5 @@ public class MenuBtn : MonoBehaviour
     public void ResetScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    
 }

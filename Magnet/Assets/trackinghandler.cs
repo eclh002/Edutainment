@@ -11,6 +11,7 @@ public class trackinghandler : MonoBehaviour, ITrackableEventHandler
     [SerializeField]
     GameObject info;
     [SerializeField]
+    bool addGravity= true;
     
 
     protected virtual void Start()
@@ -75,8 +76,10 @@ public class trackinghandler : MonoBehaviour, ITrackableEventHandler
 
         foreach (var component in rigidBody)
         {
-            
+            if (addGravity) {
                 component.useGravity = true;
+            }
+              
         }
     }
     protected virtual void OnTrackingLost()
