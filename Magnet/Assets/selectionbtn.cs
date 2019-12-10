@@ -18,17 +18,36 @@ public class selectionbtn : MonoBehaviour
     }
     public void Magnet()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("magnet");
 
     }
     public void CircularMotion()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("circularmotion");
 
     }
     public void Newton()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("newton");
 
+    }
+    public void Ball() {
+        SceneManager.LoadScene("ballinbasket");
+    }
+    public void Magnetin() {
+        SceneManager.LoadScene("inst1");
+    }
+    public void Circlein()
+    {
+        SceneManager.LoadScene("inst2");
+
+    }
+    public void Newtonin()
+    {
+        SceneManager.LoadScene("inst3");
+    }
+    public void Ballin()
+    {
+        SceneManager.LoadScene("inst4");
     }
 }
